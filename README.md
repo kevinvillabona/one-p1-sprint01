@@ -1,4 +1,4 @@
-# [Alura](https://www.aluracursos.com/) + [Oracle](https://www.oracle.com/lad/) | Sprint 01 - Programación
+# [Alura](https://www.aluracursos.com/) + [Oracle](https://www.oracle.com/lad/) | Sprint 01 - Programación | Encriptador de texto
 ###
 Esta formación forma parte del [Programa ONE](https://www.aluracursos.com/challenges/oracle-one/), una alianza entre Alura y Oracle.
 
