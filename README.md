@@ -7,7 +7,7 @@ Esta formación forma parte del [Programa ONE](https://www.aluracursos.com/chall
 ##### ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E&style=for-the-badge)
 
 ## Descripción
-[Challenge ONE](https://www.aluracursos.com/challenges/oracle-one/sprint01-construye-un-encriptador-texto-con-javascript) de Oracle Next Education y Alura.
+[Challenge ONE - Sprint 01](https://www.aluracursos.com/challenges/oracle-one/sprint01-construye-un-encriptador-texto-con-javascript) de Oracle Next Education y Alura.
 
 El desafio consiste en construir una pagina web que encripte y desencripte texto que sera ingresado por el usuario y presentarlo en su forma encriptada o desencriptada. El objetivo de este desafio es poner a prueba los conocimientos adquiridos durante el curso.
 
