@@ -17,8 +17,6 @@ body{
 	color: var(--dark-gray);
 }
 .header {
-	background: cadetblue;
-	color: #fff;
 	margin:40px 0 0 40px;
 }
 .contenedor {
@@ -31,22 +29,18 @@ body{
 	grid-template-rows: repeat(4, auto);
 
 	grid-template-areas: "contenido contenido sidebar"
+						 "contenido-footer contenido-footer sidebar"
 						 "btn-1 btn-2 sidebar";
 }
 .contenedor > div,
 .contenedor .contenido,
 .contenedor .sidebar {
-	background: #fff;
 	padding: 20px;
 	border-radius: 4px;
 }
 
 .contenedor .contenido {
 	grid-area: contenido;
-}
-.contenido > p{
-	margin-top: 20px;
-	text-align: center;
 }
 textarea {
 	width: 80%;
@@ -58,23 +52,41 @@ textarea {
 	font-family: 'Inter', sans-serif;
 	resize: none;
 	border: none;
+    outline: none;
+	background-color: var(--white);
 }
 textarea::placeholder {
 	color: var(--blue);  
 	font-family: 'Inter', sans-serif;
-  }
+	text-align: center;
+}
+.contenedor .contenido-footer{
+	grid-area: contenido-footer;
+	font-size: 12px;
+	color: var(--gray);
+	display: flex;
+	align-items: center;
+}
+.contenido-footer > img {
+	margin-right: 7px;
+}
 .contenedor .sidebar {
 	grid-column: 3 / 4;
-	background: crimson;
+	grid-area: sidebar;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100px;
-	grid-area: sidebar;
+	border-radius: 24px;
+	box-shadow: 0px 24px 32px -8px #00000014;
+}
+.img-lateral{
+	width: 306px;
 }
 .sidebar-texto{
 	padding: 30px;
+	font-size: 16px;
 }
 .sidebar-texto > h3{
 	margin-bottom: 16px;
@@ -83,33 +95,52 @@ textarea::placeholder {
 }
 .contenedor .btn-1,
 .contenedor .btn-2 {
-	background: var(--blue);
-	color: #fff;
+	font-size: 16px;
 	height: 20px;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 24px;
+	border: 1px solid var(--blue);
+	cursor: pointer;
 }
 
 .contenedor .btn-1 {
 	grid-area: btn-1;
+	background: var(--blue);
+	color: var(--white);
 }
-
+.contenedor .btn-1:hover {
+	background: var(--light-gray);
+	color: var(--blue);
+}
 .contenedor .btn-2 {
 	grid-area: btn-2;
+	background: var(--light-gray);
+	color: var(--blue);
+}
+.contenedor .btn-2:hover {
+	background: var(--blue);
+	color: var(--white);
 }
 
 .footer {
-	background: #12203E;
+	margin-top: 20px;
+	background: var(--blue);
 	color: #fff;
 	padding: 20px;
+	text-align: center;
+	font-size: 13px;
 }
-
+.footer > p > a{
+	color: var(--white);
+}
 @media screen and (max-width: 768px){
 	.contenedor {
 		grid-template-areas: 
 		"contenido contenido contenido"
+		"contenido-footer contenido-footer contenido-footer"
 		"btn-1 btn-1 btn-1"
 		"btn-2 btn-2 btn-2"
 		"sidebar sidebar sidebar";
