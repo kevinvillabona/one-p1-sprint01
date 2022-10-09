@@ -1,0 +1,217 @@
+:root{
+	--blue: #0A3871;
+	--white: #E9ECF4;
+	--gray: #495057;
+	--dark-gray: #343A40;
+	--light-gray: #D8DFE8;
+}
+*{
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	
+}
+body{
+    font-family: 'Inter', sans-serif;
+	background: var(--white);
+	color: var(--dark-gray);
+}
+.header {
+	margin:40px 0 0 40px;
+}
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+	grid-template-areas: "contenido contenido sidebar"
+						 "contenido-footer contenido-footer sidebar"
+						 "btn-1 btn-2 sidebar";
+}
+.contenedor > div,
+.contenedor .contenido,
+.contenedor .sidebar {
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.contenedor .contenido {
+	grid-area: contenido;
+}
+#textoClave {
+	width: 80%;
+	height: 500px;
+	display: block;
+	margin: auto;
+	font-size: 32px;
+	color: var(--blue);
+	font-family: 'Inter', sans-serif;
+	resize: none;
+	border: none;
+    outline: none;
+	background-color: var(--white);
+}
+#textoClave::placeholder {
+	color: var(--blue);  
+	font-family: 'Inter', sans-serif;
+	text-align: center;
+}
+#textoClave:focus::placeholder {
+	color: rgba(73, 80, 87, 0.473);
+}
+.contenedor .contenido-footer{
+	grid-area: contenido-footer;
+	font-size: 12px;
+	color: var(--gray);
+	display: flex;
+	align-items: center;
+}
+div.contenido-footer{
+	padding: 0 !important;
+}
+.contenido-footer > img {
+	margin-right: 7px;
+}
+.contenedor .sidebar, .contenedor .sidebar-oculto {
+	grid-column: 3 / 4;
+	grid-area: sidebar;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	min-height: 100px;
+	width: 300px;
+	border-radius: 24px;
+	box-shadow: 0px 24px 32px -8px #00000014;
+}
+.contenedor .sidebar{
+	align-items: center;
+}
+/* .contenedor .sidebar-oculto{
+	grid-column: 3 / 4;
+	grid-area: sidebar;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	min-height: 100px;
+	width: 300px;
+	border-radius: 24px;
+	box-shadow: 0px 24px 32px -8px #00000014;
+} */
+.img-lateral{
+	width: 80%;
+}
+.sidebar-texto{
+	padding: 30px;
+	font-size: 16px;
+}
+.sidebar-texto > h3{
+	margin-bottom: 16px;
+	font-weight: 700;
+	font-size: 24px;
+}
+.contenedor .btn-1,
+.contenedor .btn-2{
+	font-size: 16px;
+	height: 20px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 24px;
+	border: 1px solid var(--blue);
+	cursor: pointer;
+}
+.contenedor .btn-1 {
+	grid-area: btn-1;
+	background: var(--blue);
+	color: var(--white);
+}
+.contenedor .btn-1:hover {
+	background: var(--light-gray);
+	color: var(--blue);
+}
+.contenedor .btn-2 {
+	grid-area: btn-2;
+	background: var(--light-gray);
+	color: var(--blue);
+}
+.contenedor .btn-2:hover {
+	background: var(--blue);
+	color: var(--white);
+}
+.btn-c{
+	font-size: 16px;
+	width: 250px;
+	height: 20px;
+	text-align: center;
+	display: inline-block;
+	border-radius: 20px;
+	border: 1px solid var(--blue);
+	cursor: pointer;
+	background: var(--light-gray);
+	color: var(--blue);
+	padding: 15px;
+	margin-top: 30%;
+}
+.btn-c:hover {
+	background: var(--blue);
+	color: var(--white);;
+}
+#cardEncriptado > h3{
+	font-size: 25px;
+	color: var(--blue);
+}
+#textoResult {
+	width: 80%;
+	height: 65%;
+	display: block;
+	margin: auto;
+	font-size: 24px;
+	color: var(--gray);
+	font-family: 'Inter', sans-serif;
+	text-align: center;
+	resize: none;
+	border: none;
+    outline: none;
+	background-color: var(--white);
+}
+.footer {
+	margin-top: 20px;
+	background: var(--blue);
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+	font-size: 13px;
+}
+.footer > p > a{
+	color: var(--white);
+}
+@media screen and (max-width: 768px){
+	.contenedor {
+		grid-template-areas: 
+		"contenido contenido contenido"
+		"contenido-footer contenido-footer contenido-footer"
+		"btn-1 btn-1 btn-1"
+		"btn-2 btn-2 btn-2"
+		"sidebar sidebar sidebar";
+	}
+	textarea{
+		width: 95%;
+		height: 350px;
+	}
+	.img-lateral{
+		position: absolute;
+		visibility: hidden;
+	}
+	.sidebar-texto{
+		padding: 0;
+	}
+	.footer{
+		font-size: 11px;
+	}
+}

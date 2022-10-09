@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador | Sprint 01 | ONE - Alura</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/alura-logo.svg" alt="Logo de Alura" class="logo" />
+    </header>
+    <main class="contenedor">
+      <div class="contenido">
+        <textarea name="textoClave" id="textoClave" placeholder="Ingrese el texto aquí"></textarea>
+      </div>
+      <div class="contenido-footer">
+        <img src="assets/bi_exclamation-circle-fill.svg" alt="" />
+        <p>Solo letras minúsculas y sin acentos</p>
+      </div>
+      <aside class="sidebar" id="aside">
+        <div id="sidebar-img">
+          <img src="assets/imagen-lateral.svg" alt="Imagen lateral" class="img-lateral"/>
+          <div class="sidebar-texto">
+            <h3>Ningún mensaje fue encontrado</h3>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+        </div>
+        <div id="cardEncriptado" hidden>
+          <h3 id="h3encriptado">Texto Encriptado:</h3>
+          <!-- <p id="textoResult"></p> -->
+          <textarea name="textoResult" id="textoResult"></textarea>
+          <div class="btn-c" id="copiar">
+            <p>Copiar</p>
+          </div>
+        </div>
+      </aside>
+      <div class="btn-1" id="encriptar">
+        <p>Encriptar</p>
+      </div>
+      <div class="btn-2" id="desencriptar">
+        <p>Desencriptar</p>
+      </div>
+    </main>
+    <footer class="footer">
+      <p><a href="https://www.aluracursos.com/challenges/oracle-one">ONE</a> | Sprint 01 - Programación | Encriptador de texto</p>
+      <p><a href="https://github.com/kevinvillabona">Kevin</a> - 2022</p>
+    </footer>
+  </body>
+  <script type="text/javascript" src="app.js"></script>
+  <script>
+  </script>
+</html>
