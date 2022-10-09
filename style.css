@@ -206,13 +206,23 @@ div.contenido-footer{
 	.contenedor .sidebar, .contenedor .sidebar-oculto{
 		justify-content: center;
 		width: auto;
+		height: 400px;
 	}
 	#textoClave{
 		width: 95%;
 		height: 350px;
 	}
-	#textoResult{
-		height: 350px;
+	.contenedor .btn-1:hover {
+		background: var(--blue);
+		color: var(--white);
+	}
+	.contenedor .btn-2:hover {
+		background: var(--light-gray);
+		color: var(--blue);
+	}
+	.btn-c:hover {
+		background: var(--light-gray);
+		color: var(--blue);
 	}
 	.btn-c{
 		margin-top: 0;
