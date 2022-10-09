@@ -192,6 +192,9 @@ div.contenido-footer{
 	color: var(--white);
 }
 @media screen and (max-width: 768px){
+	body{
+		overflow-x:hidden;
+	}
 	.contenedor {
 		grid-template-areas: 
 		"contenido contenido contenido"
@@ -200,9 +203,19 @@ div.contenido-footer{
 		"btn-2 btn-2 btn-2"
 		"sidebar sidebar sidebar";
 	}
-	textarea{
+	.contenedor .sidebar, .contenedor .sidebar-oculto{
+		justify-content: center;
+		width: auto;
+	}
+	#textoClave{
 		width: 95%;
 		height: 350px;
+	}
+	#textoResult{
+		height: 350px;
+	}
+	.btn-c{
+		margin-top: 0;
 	}
 	.img-lateral{
 		position: absolute;
@@ -210,6 +223,9 @@ div.contenido-footer{
 	}
 	.sidebar-texto{
 		padding: 0;
+	}
+	#cardEncriptado{
+		width: 100%;
 	}
 	.footer{
 		font-size: 11px;
