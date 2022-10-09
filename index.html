@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
     <header class="header">
@@ -19,35 +18,42 @@
     </header>
     <main class="contenedor">
       <div class="contenido">
-        <textarea name="textoClave" id="" placeholder="Ingrese el texto aquí"></textarea>
+        <textarea name="textoClave" id="textoClave" placeholder="Ingrese el texto aquí"></textarea>
       </div>
       <div class="contenido-footer">
         <img src="assets/bi_exclamation-circle-fill.svg" alt="" />
         <p>Solo letras minúsculas y sin acentos</p>
       </div>
-      <aside class="sidebar">
-        <div class="sidebar-contenido">
-          <img src="assets/imagen-lateral.svg" alt="Nene con lupa" class="img-lateral"/>
+      <aside class="sidebar" id="aside">
+        <div id="sidebar-img">
+          <img src="assets/imagen-lateral.svg" alt="Imagen lateral" class="img-lateral"/>
           <div class="sidebar-texto">
             <h3>Ningún mensaje fue encontrado</h3>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+        </div>
+        <div id="cardEncriptado" hidden>
+          <h3 id="h3encriptado">Texto Encriptado:</h3>
+          <!-- <p id="textoResult"></p> -->
+          <textarea name="textoResult" id="textoResult"></textarea>
+          <div class="btn-c" id="copiar">
+            <p>Copiar</p>
           </div>
         </div>
       </aside>
       <div class="btn-1" id="encriptar">
         <p>Encriptar</p>
       </div>
-      <div class="btn-2" id="desencriptar" onclick="desencriptar()">
+      <div class="btn-2" id="desencriptar">
         <p>Desencriptar</p>
       </div>
     </main>
     <footer class="footer">
-      <p>Por <a href="https://github.com/kevinvillabona">Kevin</a> | Alura + Oracle | Sprint 01 - Programación | Encriptador de texto</p>
+      <p><a href="https://www.aluracursos.com/challenges/oracle-one">ONE</a> | Sprint 01 - Programación | Encriptador de texto</p>
+      <p><a href="https://github.com/kevinvillabona">Kevin</a> - 2022</p>
     </footer>
   </body>
+  <script type="text/javascript" src="app.js"></script>
   <script>
-  function desencriptar() {
-    alert("desencriptar");
-  }
   </script>
 </html>

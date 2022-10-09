@@ -36,11 +36,6 @@ Las **"llaves"** de encriptación que utilizaremos son las siguientes:
 >### Extra
 >- Un botón que copie el texto encriptado/desencriptado para la sección de transferencia, o sea que tenga la misma funcionalidad del ctrl+C o de la opción "copiar" del menú de las aplicaciones.
 
-## Layout
-|Diseño proporcionado| Diseño final |
-|--|--|
-| IMG1 | IMG2 |
-
 ## Links de utilidad
 - [Challenge ONE - Sprint 01](https://www.aluracursos.com/challenges/oracle-one/sprint01-construye-un-encriptador-texto-con-javascript)
 - Tarjetas de [Trello](https://trello.com/b/WTdfcewC/encriptador-de-texto-alura-challenges-one)
