@@ -12,12 +12,12 @@ btnCopiar.onclick = copiar;
 
 function encriptar(){
     ocultar();
-    textoResult.textContent = encriptarTxt(texto.value.toLowerCase());
+    textoResult.textContent = encriptarTxt(texto.value.toLowerCase(), keys);
     h3.textContent = "Texto Encriptado:"
 }
 function desencriptar(){
     ocultar();
-    textoResult.textContent = desencriptarTxt(texto.value.toLowerCase());
+    textoResult.textContent = desencriptarTxt(texto.value.toLowerCase(), cambiarPropVal(keys));
     h3.textContent = "Texto Desencriptado:"
 }
 function ocultar (){
@@ -26,20 +26,20 @@ function ocultar (){
     aside.classList.remove("sidebar");
     aside.classList.add("sidebar-oculto");
 }
-function encriptarTxt (texto){
+//se refactoriza el codigo usando objetos
+const keys = {
+    "a": "ai",
+    "e": "enter",
+    "i": "imes",
+    "o": "ober",
+    "u": "ufat"
+};
+function encriptarTxt(texto, keys) {
     let txt = texto;
     let txtEncrip = "";
-    for(let i =0; i<txt.length; i++){
-        if(txt[i]=="a"){
-            txtEncrip += "ai"
-        } else if(txt[i]=="e"){
-            txtEncrip += "enter"
-        } else if(txt[i]=="i"){
-            txtEncrip += "imes"
-        } else if(txt[i]=="o"){
-            txtEncrip += "ober"
-        } else if(txt[i]=="u"){
-            txtEncrip += "ufat"
+    for (let i = 0; i < txt.length; i++) {
+        if (keys[txt[i]]) {
+            txtEncrip += keys[txt[i]];
         } else {
             txtEncrip += txt[i];
         }
@@ -47,30 +47,21 @@ function encriptarTxt (texto){
     return txtEncrip;
 }
 
-function desencriptarTxt (texto){
-    let txt = texto;
-    let txtEncrip = "";
-    for(let i =0; i<txt.length; i++){
-        if(txt[i]=="a"){
-            txtEncrip += "a"
-            i++
-        } else if(txt[i]=="e"){
-            txtEncrip += "e"
-            i+=4
-        } else if(txt[i]=="i"){
-            txtEncrip += "i"
-            i+=3
-        } else if(txt[i]=="o"){
-            txtEncrip += "o"
-            i+=3
-        } else if(txt[i]=="u"){
-            txtEncrip += "u"
-            i+=3
-        } else {
-            txtEncrip += txt[i];
-        }
+function cambiarPropVal(obj) {
+    var cambio = {};
+    for (var val in obj) {
+      cambio[obj[val]] = val;
     }
-    return txtEncrip;
+    return cambio;
+  }
+
+function desencriptarTxt (texto, keys){
+    for (const [original, cambio] of Object.entries(keys)) {
+        //se usa la expresion regular porque solamente reemplazaba en la primera coincidencia
+        const regex = new RegExp(original, "g");
+        texto = texto.replace(regex, cambio);
+      }
+      return texto;
 }
 function copiar(){
     textoResult.select();
