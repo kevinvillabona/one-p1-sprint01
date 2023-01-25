@@ -17,7 +17,7 @@ function encriptar(){
 }
 function desencriptar(){
     ocultar();
-    textoResult.textContent = desencriptarTxt(texto.value.toLowerCase(), cambiarPropVal(keys));
+    textoResult.textContent = desencriptarTxt(texto.value.toLowerCase(), cambiarPropPorVal(keys));
     h3.textContent = "Texto Desencriptado:"
 }
 function ocultar (){
@@ -26,7 +26,7 @@ function ocultar (){
     aside.classList.remove("sidebar");
     aside.classList.add("sidebar-oculto");
 }
-//se refactoriza el codigo usando objetos
+//se refactoriza el codigo usando objetos y expresiones regulares
 const keys = {
     "a": "ai",
     "e": "enter",
@@ -34,35 +34,30 @@ const keys = {
     "o": "ober",
     "u": "ufat"
 };
-function encriptarTxt(texto, keys) {
-    let txt = texto;
-    let txtEncrip = "";
-    for (let i = 0; i < txt.length; i++) {
-        if (keys[txt[i]]) {
-            txtEncrip += keys[txt[i]];
-        } else {
-            txtEncrip += txt[i];
-        }
-    }
-    return txtEncrip;
+
+//se usa replace en cambio de replaceAll porque este no esta soportado por todos los navegadores
+function encriptarTxt(texto, keys){
+    let reemplazar = texto.replace(/a|e|i|o|u/g, function(x){
+        return keys[x]
+    })
+    return reemplazar
 }
 
-function cambiarPropVal(obj) {
+function desencriptarTxt(texto, keys){
+    let reemplazar = texto.replace(/ai|enter|imes|ober|ufat/g, function(x){
+        return keys[x]
+    })
+    return reemplazar
+}
+//cambio la propiedad por su valor del objeto keys
+function cambiarPropPorVal(obj) {
     var cambio = {};
     for (var val in obj) {
       cambio[obj[val]] = val;
     }
     return cambio;
-  }
-
-function desencriptarTxt (texto, keys){
-    for (const [original, cambio] of Object.entries(keys)) {
-        //se usa la expresion regular porque solamente reemplazaba en la primera coincidencia
-        const regex = new RegExp(original, "g");
-        texto = texto.replace(regex, cambio);
-      }
-      return texto;
 }
+
 function copiar(){
     textoResult.select();
     document.execCommand("copy");
