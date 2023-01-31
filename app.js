@@ -12,12 +12,12 @@ btnCopiar.onclick = copiar;
 
 function encriptar(){
     ocultar();
-    textoResult.textContent = encriptarTxt(texto.value.toLowerCase(), keys);
+    textoResult.textContent = encriptarDesencriptarTxt(texto.value.toLowerCase(), cambiarPropPorVal(keys));
     h3.textContent = "Texto Encriptado:"
 }
 function desencriptar(){
     ocultar();
-    textoResult.textContent = desencriptarTxt(texto.value.toLowerCase(), cambiarPropPorVal(keys));
+    textoResult.textContent = encriptarDesencriptarTxt(texto.value.toLowerCase(), keys);
     h3.textContent = "Texto Desencriptado:"
 }
 function ocultar (){
@@ -36,19 +36,31 @@ const keys = {
 };
 
 //se usa replace en cambio de replaceAll porque este no esta soportado por todos los navegadores
-function encriptarTxt(texto, keys){
-    let reemplazar = texto.replace(/a|e|i|o|u/g, function(x){
-        return keys[x]
+
+// function encriptarTxt(texto, keys){
+//     let reemplazar = texto.replace(/a|e|i|o|u/g, function(x){
+//         return keys[x]
+//     })
+//     return reemplazar
+// }
+
+// function desencriptarTxt(texto, keys){
+//     let reemplazar = texto.replace(/ai|enter|imes|ober|ufat/g, function(x){
+//         return keys[x]
+//     })
+//     return reemplazar
+// }
+
+function encriptarDesencriptarTxt(texto, keys){
+    const keysR = Object.values(keys).join("|");
+    const regex = new RegExp(keysR, "g");
+    console.log(regex)
+    let reemplazar = texto.replace(regex, function(x){
+        return cambiarPropPorVal(keys)[x]
     })
     return reemplazar
 }
 
-function desencriptarTxt(texto, keys){
-    let reemplazar = texto.replace(/ai|enter|imes|ober|ufat/g, function(x){
-        return keys[x]
-    })
-    return reemplazar
-}
 //cambio la propiedad por su valor del objeto keys
 function cambiarPropPorVal(obj) {
     var cambio = {};
